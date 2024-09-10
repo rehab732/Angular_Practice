@@ -23,21 +23,29 @@ export class UserComponent {
 // }
 
 //? Using Input()
-@Input() avatar! : string;
-@Input({required:true}) name! : string;
-@Input({required:true}) id!: string;
+// @Input() avatar! : string;
+// @Input({required:true}) name! : string;
+// @Input({required:true}) id!: string;
+//* passing object
+
+@Input({required:true}) user!:{
+  id:string,
+  avatar:string,
+  name:string
+}
 
 @Output() select=new EventEmitter<string>();
 selectTest=output<string>();
 
 onSelectUser(){
-  this.select.emit(this.id);
+  // this.select.emit(this.id);
   // this.selectTest.emit(this.id);
+  this.select.emit(this.user.id)
   console.log("clicked");
 }
 
 get ImagePath(){
-  return 'assets/users/'+this.avatar;
+  return 'assets/users/'+this.user.avatar;
 }
 
 }
