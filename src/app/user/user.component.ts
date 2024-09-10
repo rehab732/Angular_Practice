@@ -36,7 +36,7 @@ export class UserComponent {
 
 @Output() select=new EventEmitter<string>();
 selectTest=output<string>();
-
+@Input({required:true}) selected!:boolean;
 onSelectUser(){
   // this.select.emit(this.id);
   // this.selectTest.emit(this.id);

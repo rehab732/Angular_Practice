@@ -1,15 +1,27 @@
 <app-header></app-header>
 <main>
 <ul id="users">
-  @for(user of users; track user)
+  @for(user of users; track user.id)
   {
     <li>
       <app-user 
       [user]="user"
       (select)="onSelectUser($event)"
+      [selected]="user.id===selectedUserId"
       />
     </li>
   }
 </ul>
-<app-tasks [name]="getSelectedUserName.name"/>
+<!-- @if(selectedUserId)
+{
+  <app-tasks [name]="getSelectedUserName.name"/>
+}@else {
+  <p id="fallback">Select A User To Show Tasks</p>
+} -->
+  <app-tasks *ngIf="selectedUserId; else fallback" [name]="getSelectedUserName!.name" [userId]="getSelectedUserName.id"></app-tasks>
+  <ng-template #fallback>
+  <p id="fallback">Select A User To Show Tasks</p>
+
+  </ng-template>
+  
 </main>
