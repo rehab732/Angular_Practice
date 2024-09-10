@@ -8,10 +8,10 @@
       [avatar]="user.avatar"
       [name]="user.name"
       [id]="user.id"
-      (select)="test($event)"
+      (select)="onSelectUser($event)"
       />
     </li>
   }
-  
 </ul>
+<app-tasks [name]="getSelectedUserName.name"/>
 </main>
