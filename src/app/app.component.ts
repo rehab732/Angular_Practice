@@ -13,4 +13,7 @@ import { DUMMY_USERS } from './dummy_users';
 })
 export class AppComponent {
   users=DUMMY_USERS;
+  test(id:string){
+    console.log("user number :"+ id);
+  }
 }

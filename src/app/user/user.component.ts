@@ -1,4 +1,4 @@
-import { Component , computed, Input, signal} from '@angular/core';
+import { Component , computed, EventEmitter, Input, output, Output, signal} from '@angular/core';
 import { DUMMY_USERS } from '../dummy_users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -25,8 +25,14 @@ export class UserComponent {
 //? Using Input()
 @Input() avatar! : string;
 @Input() name! : string;
+@Input({required:true}) id!: string;
+
+@Output() select=new EventEmitter<string>();
+selectTest=output<string>();
 
 onSelectUser(){
+  this.select.emit(this.id);
+  // this.selectTest.emit(this.id);
   console.log("clicked");
 }
 
