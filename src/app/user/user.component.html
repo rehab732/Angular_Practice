@@ -2,8 +2,8 @@
   <button (click)="onSelectUser()">
     <!-- property Binding -->
     <!-- <img [src]="getImagePath" [alt]="user().name"/> -->
-    <img [src]="imagePath()" [alt]="user().name"/>
+    <img [src]="ImagePath" [alt]="name"/>
 
-    <span>{{user()!.name}}</span>
+    <span>{{name}}</span>
   </button>
 </div>
