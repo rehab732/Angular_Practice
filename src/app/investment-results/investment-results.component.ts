@@ -4,8 +4,7 @@ import { InvestmentService } from '../investment.service';
 
 @Component({
   selector: 'app-investment-results',
-  standalone: true,
-  imports: [CurrencyPipe],
+  // imports: [CurrencyPipe],
   templateUrl: './investment-results.component.html',
   styleUrl: './investment-results.component.scss'
 })
