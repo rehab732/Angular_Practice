@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './server-status.component.scss'
 })
 export class ServerStatusComponent {
+  currentStatus = 'online';
 
 }
