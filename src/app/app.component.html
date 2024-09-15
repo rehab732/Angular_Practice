@@ -1,16 +1,15 @@
-<app-header/>
+<app-header />
 <main>
   <div id="dashboard">
     <div class="dashboard-item">
-    <app-server-status></app-server-status>
+      <app-server-status></app-server-status>
     </div>
 
-    <div class="dashboard-item">
-      <app-traffic></app-traffic>
-    </div>
+    <app-traffic></app-traffic>
 
-    <div class="dashboard-item">
-    <app-tickets></app-tickets>
-    </div>
+    <app-dashboard-item imageAlt="A list of items" imagePath="assets/list.png" title="Support Tickets"> 
+      <app-tickets></app-tickets>
+    </app-dashboard-item>
+  
   </div>
 </main>
