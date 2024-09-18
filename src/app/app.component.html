@@ -1,15 +1,15 @@
 <app-header />
 <main>
   <div id="dashboard">
-    <div class="dashboard-item">
+    <app-dashboard-item title="Server Status" imageAlt="A signal symbol" imagePath="assets/status.png">
       <app-server-status></app-server-status>
-    </div>
+    </app-dashboard-item>
 
     <app-traffic></app-traffic>
 
-    <app-dashboard-item imageAlt="A list of items" imagePath="assets/list.png" title="Support Tickets"> 
+    <app-dashboard-item imageAlt="A list of items" imagePath="assets/list.png" title="Support Tickets">
       <app-tickets></app-tickets>
     </app-dashboard-item>
-  
+
   </div>
 </main>

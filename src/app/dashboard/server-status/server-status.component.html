@@ -1,13 +1,14 @@
-<!-- <article>
-  <header>
-    <img src="assets/status.png" alt="A signal symbol" />
-    <h2>Server Status</h2>
-  </header>
-  <div>
-    @if (currentStatus === 'online') {
+  <div
+  [class]="{
+    status:true,
+    'status-online':currentStatus()==='online',
+    'status-offline':currentStatus()==='offline',
+    'status-unKnown':currentStatus()==='unKnown',
+  }">
+    @if (currentStatus() === 'online') {
       <p>Servers are online</p>
       <p>All systems are operational.</p>
-    } @else if (currentStatus === 'offline') {
+    } @else if (currentStatus() === 'offline') {
       <p>Servers are offline</p>
       <p>Functionality should be restored soon.</p>
     } @else {
@@ -15,19 +16,3 @@
       <p>Fetching server status failed.</p>
     }
   </div>
-</article> -->
-
-<app-dashboard-item title="Server Status" imageAlt="A signal symbol" imagePath="assets/status.png">
-  <div>
-    @if (currentStatus === 'online') {
-      <p>Servers are online</p>
-      <p>All systems are operational.</p>
-    } @else if (currentStatus === 'offline') {
-      <p>Servers are offline</p>
-      <p>Functionality should be restored soon.</p>
-    } @else {
-      <p>Server status is unknown</p>
-      <p>Fetching server status failed.</p>
-    }
-  </div>
-</app-dashboard-item>
