@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, viewChild, ViewChild } from '@angular/core';
+import { afterNextRender, afterRender, AfterViewInit, Component, ElementRef, OnInit, viewChild, ViewChild } from '@angular/core';
 import { ButtonComponent } from "../../../shared/button/button.component";
 import { ControlComponent } from "../../../shared/control/control.component";
 import { FormsModule ,NgForm} from '@angular/forms';
@@ -13,6 +13,15 @@ import { FormsModule ,NgForm} from '@angular/forms';
 export class NewTicketComponent implements OnInit,AfterViewInit{
 
   @ViewChild('form') form?: ElementRef<HTMLFormElement>;
+  constructor(){
+    afterRender(()=>{
+      console.log("afterRender");
+    });
+    afterNextRender(()=>{
+      console.log("afterNextRender");
+    })
+  }
+
   //!using signal
   // private form=viewChild.required<ElementRef<HTMLFormElement>>('form');
   ngOnInit(): void {
