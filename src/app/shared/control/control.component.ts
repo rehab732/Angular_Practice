@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, ViewEncapsulation } from '@angular/core';
+import { Component, ContentChild, ElementRef, HostListener, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -9,8 +9,10 @@ import { Component, HostListener, Input, ViewEncapsulation } from '@angular/core
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ControlComponent {
+  @ContentChild('input') control?: ElementRef<HTMLInputElement | HTMLTextAreaElement>
   @Input() label?: string;
   @HostListener('click') onClick() {
     console.log("clicked");
+    console.log(this.control);
   }
 }
