@@ -1,4 +1,4 @@
-import { Component, ContentChild, ElementRef, HostListener, Input, ViewEncapsulation } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, ElementRef, HostListener, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -8,8 +8,18 @@ import { Component, ContentChild, ElementRef, HostListener, Input, ViewEncapsula
   styleUrl: './control.component.scss',
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class ControlComponent {
+export class ControlComponent implements OnInit,AfterContentInit{
+  
+  
   @ContentChild('input') control?: ElementRef<HTMLInputElement | HTMLTextAreaElement>
+  ngOnInit(): void {
+    console.log("init control ")
+    console.log(this.control);
+  }
+  ngAfterContentInit(): void {
+    console.log("After control ")
+    console.log(this.control);
+  }
   @Input() label?: string;
   @HostListener('click') onClick() {
     console.log("clicked");
