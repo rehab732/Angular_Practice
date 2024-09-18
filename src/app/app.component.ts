@@ -4,13 +4,18 @@ import { ServerStatusComponent } from "./dashboard/server-status/server-status.c
 import { TrafficComponent } from "./dashboard/traffic/traffic.component";
 import { TicketsComponent } from "./dashboard/tickets/tickets.component";
 import { DashboardItemComponent } from "./dashboard/dashboard-item/dashboard-item.component";
+import { CustomBindingComponent } from "./custom-binding/custom-binding.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [HeaderComponent, ServerStatusComponent, TrafficComponent, TicketsComponent, DashboardItemComponent],
+  imports: [FormsModule,HeaderComponent, ServerStatusComponent, TrafficComponent, TicketsComponent, DashboardItemComponent, CustomBindingComponent],
 })
 export class AppComponent {
-
+  rectSize = {
+    width: '100',
+    height: '100'
+  }
 }

@@ -4,12 +4,22 @@
     <app-dashboard-item title="Server Status" imageAlt="A signal symbol" imagePath="assets/status.png">
       <app-server-status></app-server-status>
     </app-dashboard-item>
-
     <app-traffic></app-traffic>
-
     <app-dashboard-item imageAlt="A list of items" imagePath="assets/list.png" title="Support Tickets">
       <app-tickets></app-tickets>
     </app-dashboard-item>
-
   </div>
+  <div id="inputs">
+    <p>
+      <label>Width</label>
+      <input type="number" step="1.0" [(ngModel)]="rectSize.width" />
+    </p>
+    <p>
+    <label>height</label>
+    <input type="number" step="1.0" [(ngModel)]="rectSize.height" />
+    </p>
+  </div>
+  <app-dashboard-item imageAlt="A list of items" imagePath="assets/list.png" title="Custom Binding">
+    <app-custom-binding [size]="rectSize"></app-custom-binding>
+  </app-dashboard-item>
 </main>
