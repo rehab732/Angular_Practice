@@ -4,9 +4,13 @@
   <hr />
 
   <app-auth />
-
+<!-- 
   @if(isAdmin())
   {
     <p>test Admin</p>
-  }
+  } -->
+    <!-- <ng-template appAuth="admin">
+      <p>data</p>
+    </ng-template> -->
+    <p *appAuth="'admin'">data</p>
 </main>
