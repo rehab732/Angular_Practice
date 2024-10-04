@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+
+import { TasksComponent } from './tasks/tasks.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [TasksComponent],
 })
-export class AppComponent {
-
-}
+export class AppComponent {}
